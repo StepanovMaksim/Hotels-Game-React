@@ -1,0 +1,478 @@
+body {
+    font: 14px "Century Gothic", Futura, sans-serif;
+    background: url(../public/bacgroundPhoto.png) no-repeat;
+    background-size: 100% 180%;
+    background-color: #7f5127bf;
+  }
+/* модальное окно*/
+
+  .modalBack{
+    background: #00000075;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+  }
+
+
+
+  .modalBackAnimation{
+    background: #00000075;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transform: scale(0);
+    transition: 0.5s;
+  }
+
+  .modalBackAnimation.active {
+    transform: scale(1);
+  }
+
+  .modalWindow {
+    font-size: large;
+    padding: 15px;
+    border: #a757157f solid 4px;
+    border-radius: 20px;
+    background: #cccf17;
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    width: 40%;
+    text-align: center;
+    z-index: 10;
+  }
+  
+  .playerName {
+    font-size: x-large;
+    border-radius: 6px;
+    width: 60%;
+  }
+  
+  .addPlayer {
+    font-size: x-large;
+    margin-left: 5%;
+    border: #ff8d2f7f solid 4px;
+    border-radius: 60px;
+    padding: 1%;
+  }
+ 
+  .addPlayer:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      scale: 1.05;
+  }
+
+  .addPlayer:active {
+    scale: 0.9;
+  }
+  
+ 
+/* бросить кубики */
+
+  
+  .modalRoll {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    z-index: 0;
+    border-radius: 10px;
+    font-size: x-large;
+    padding: 10px;
+    position: fixed;
+    top: 3%;
+    left: 40%;
+}
+
+.modalRoll:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.modalRoll:active {
+    color: #000
+}
+
+.modalRoll:active:after {
+    background: transparent;
+}
+
+.modalRoll:hover:before {
+    opacity: 1;
+}
+
+.modalRoll:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.squareOwn {
+  position: relative;
+  background: #fff;
+  border: 6px solid #07da00;
+  border-radius: 10px;
+  float: left;
+  height: 120px;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0;
+  width: 100px;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.squareOwn1 {
+    position: relative;
+    background: #fff;
+    border: 6px solid #fcfc4c;
+    border-radius: 10px;
+    float: left;
+    height: 120px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 0;
+    width: 100px;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+  .modalOwned {
+    padding: 10px 5px 10px 5px;
+    width: 500px;
+    border: #a757157f solid 4px;
+    border-radius: 10px;
+    position: absolute;
+    top: 12%;
+    text-align: center;
+    z-index: 10;
+    background-color: #93f78fdc;
+    left: 2%;
+  }
+
+  .modalOwned1 {
+    padding: 10px 5px 10px 5px;
+    width: 500px;
+    border: #a757157f solid 4px;
+    border-radius: 10px;
+    position: absolute;
+    top: 12%;
+    text-align: center;
+    z-index: 10;
+    background-color: #fdfd8dd1;
+    right: 2%;
+  }
+
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+  .player1 {
+    position: absolute;
+    top:20px;
+    left: 2%;
+    border: #000000 solid 2px;
+    background-color: #3bfb35;
+    font-size: large;
+    font-weight: 700;
+    border-radius: 6px;
+  }
+
+  .manage1 {
+    cursor: pointer;
+    position: absolute;
+    top: 27px;
+    left: 15%;
+    font-size: larger;
+    border-radius: 5px;
+    margin-right: 10%;
+    width: 150px;
+    background-color: #3bfb35;
+    box-shadow:  0px 0px 0px 7px rgb(129, 255, 127);
+    transition: 0.2s;
+  }
+
+
+  .manage1:hover {
+    box-shadow: 0px 0px 0px 0px;
+    scale: 1.05;
+    transform: translateY(3px);
+  }
+  .manage1:active {
+    scale: 1;
+    transform: translateY(3px);
+  }
+
+  .player2 {
+    position: absolute;
+    right: 2%;
+    top:20px;
+    border: #000000 solid 2px;
+    background-color: #fcfc4c;
+    font-size: large;
+    font-weight: 700;
+    border-radius: 6px;
+
+  }
+
+  .manage2 {
+    cursor: pointer;
+    position: absolute;
+    top: 27px;
+    right: 9%;
+    font-size: larger;
+    border-radius: 5px;
+    margin-right: 10%;
+    width: 150px;
+    background-color: #fcfc4c;
+    box-shadow: 0px 0px 0px 7px rgb(253, 249, 128);
+    transition: 0.2s;
+  }
+
+  .manage2:hover {
+    box-shadow: 0px 0px 0px 0px;
+    scale: 1.05;
+    transform: translateY(3px);
+  }
+
+  .manage2:active {
+    scale: 1;
+    transform: translateY(3px);
+  }
+
+  .price {
+    position: absolute;
+    bottom: 10%;
+    right: 0%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 150%;
+    font-weight: 500;
+    color: #050505;
+    background-color: rgb(172, 175, 255);
+    border-radius: 30%;
+    padding: 0% 3%;
+    margin-bottom: 10%;
+  }
+
+
+
+  .nameP {
+    margin: 6px 6px 0px 6px;
+  }
+
+  .score {
+    margin: 6px 6px 4px 6px;
+  }
+
+  .player1scoreP{
+    position: fixed;
+    top: 3%;
+    left: 30%;
+    padding: 0.6%;
+    font-size: large;
+    border: #000000 solid 2px;
+    border-radius: 10px;
+    background-color:#3bfb35;
+  }
+
+  .player2scoreP {
+    position: fixed;
+    top: 3%;
+    right: 34%;
+    padding: 0.6%;
+    font-size: large;
+    border: #000000 solid 2px;
+    border-radius: 10px;
+    background-color: #fcfc4c;
+  }
+
+  
+  .board-row {
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 180px;
+    width: 1080px;
+    z-index: 1;
+  }
+
+
+
+  .status {
+    margin-bottom: 10px;
+  }
+
+  .square1 {
+    background: #7fff5c;
+    position: relative;
+    border: 4px solid #07da00;
+    border-radius: 10px;
+    float: left;
+    height: 120px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0;
+    width: 100px;
+    z-index: 2;
+    text-align: center;
+    scale: 1.2;
+  }
+
+  .square2 {
+    background: #ffff7b;
+    position: relative;
+    border: 4px solid #ffff09;
+    border-radius: 10px;
+    float: left;
+    height: 120px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0;
+    width: 100px;
+    z-index: 2;
+    text-align: center;
+    scale: 1.2;
+  }
+
+  .square3 {
+    background: #f5f0ac;
+    position: relative;
+    border: 4px solid;
+    border-radius: 10px;
+    border-color: #07da00 #07da00 #ffff09  #ffff09;
+    float: left;
+    height: 120px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0;
+    width: 100px;
+    z-index: 3;
+    text-align: center;
+    scale: 1.2;
+  }
+
+  .square {
+    position: relative;
+    background: #ffffff;
+    border: 4px solid #000000;
+    float: left;
+    height: 120px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding: 0;
+    width: 100px;
+    z-index: 1;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  
+  .square4 {
+    background: #69ff63;
+    position: relative;
+    border: 4px solid #07da00;
+    float: left;
+    height: 120px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0;
+    width: 100px;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  .square5 {
+    background: #ffff58;
+    position: relative;
+    border: 4px solid #ffff09;
+    float: left;
+    height: 120px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0;
+    width: 100px;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  .square:focus {
+    outline: none;
+  }
+  
+  .kbd-navigation .square:focus {
+    background: #ddd;
+  }
+  
+  .game {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .game-info {
+    margin-left: 20px;
+  }
+  
+  .buy {
+    font-size: larger;
+    border-radius: 5px;
+    margin-right: 10%;
+  }
+
+  .auction {
+    font-size: larger;
+    border-radius: 5px;
+  }
+
+  .payRent {
+    font-size: larger;
+    border-radius: 5px;
+  }
+
+  .cub1 {
+    position: fixed;
+    top: 100px;
+    left: 40%;
+  }
+
+  .cub2 {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+  }
