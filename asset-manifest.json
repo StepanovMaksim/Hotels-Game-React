@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Hotels-Game-React/static/css/main.9ad54bc9.css",
+    "main.js": "/Hotels-Game-React/static/js/main.8bd174b9.js",
+    "static/media/bacgroundPhoto.png": "/Hotels-Game-React/static/media/bacgroundPhoto.26752aaedf3346f75c4e.png",
+    "index.html": "/Hotels-Game-React/index.html",
+    "main.9ad54bc9.css.map": "/Hotels-Game-React/static/css/main.9ad54bc9.css.map",
+    "main.8bd174b9.js.map": "/Hotels-Game-React/static/js/main.8bd174b9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ad54bc9.css",
+    "static/js/main.8bd174b9.js"
+  ]
+}
