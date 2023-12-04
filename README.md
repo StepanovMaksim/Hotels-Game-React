@@ -1,4 +1,6 @@
-# Play: https://stepanovmaksim.github.io/Hotels-Game-React/
+# Play: ## https://stepanovmaksim.github.io/Hotels-Game-React/
+
+
 
 # Getting Started with Create React App
 
